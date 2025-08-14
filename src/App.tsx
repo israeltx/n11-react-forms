@@ -6,6 +6,7 @@ export default function App() {
 
   function onSubmit(e: React.FormEvent<HTMLElement>) {
     e.preventDefault()
+    setName('')
   }
 
   return (
@@ -13,7 +14,12 @@ export default function App() {
       <h1>Evento {name}</h1>
 
       <form onSubmit={onSubmit}>
-        <input type="text" placeholder="Nome do evento" onChange={(e) => setName(e.target.value)}/>
+        <input 
+          type="text" 
+          placeholder="Nome do evento" 
+          value={name}
+          onChange={(e) => 
+          setName(e.target.value)}/>
         <span className="error">Nome é obrigatório</span>
 
         <input type="date" placeholder="Nome do evento" lang="pt-BR" />
